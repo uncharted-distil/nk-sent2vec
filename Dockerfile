@@ -1,6 +1,6 @@
 FROM registry.datadrivendiscovery.org/jpl/docker_images/complete:ubuntu-artful-python36-devel-20180419-092215
 
-ENV HOME=/app
+ENV HOME=/ibex
 
 WORKDIR $HOME
 

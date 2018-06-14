@@ -1,16 +1,24 @@
 ''' Tests for nk_sent2vec '''
 import numpy as np
 
-from . import embed_sentences, model, train_model, nearest_neighbors, analogies
+from . import embed_sentences, model, train_model, nearest_neighbors, analogies, produce
+
+test_docs = ['this is a test', 'this is a trap']
+
+
+def test_produce():
+    embeddings = produce(test_docs)
+    assert isinstance(embeddings, np.ndarray)
+    assert embeddings.shape == (len(test_docs), model.get_emb_size())
 
 
 def test_embed_sentences():
-    docs = ['this is a test', 'this is a trap']
-    embs = embed_sentences(docs)
-    print(embs)
-    print(embs.shape)
-    assert isinstance(embs, np.ndarray)
-    assert embs.shape == (len(docs), model.get_emb_size())
+
+    embeddings = embed_sentences(test_docs)
+    print(embeddings)
+    print(embeddings.shape)
+    assert isinstance(embeddings, np.ndarray)
+    assert embeddings.shape == (len(test_docs), model.get_emb_size())
 
 
 def test_train_model():

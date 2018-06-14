@@ -10,6 +10,10 @@ model = sent2vec.Sent2vecModel()
 model.load_model(MODEL_PATH)
 
 
+def produce(sentences: List[str]):
+    return embed_sentences(sentences)
+
+
 def embed_sentence(sentence: str):
     return model.embed_sentences(sentence)
 
