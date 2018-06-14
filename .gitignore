@@ -1,5 +1,7 @@
 models
 data
+*.env
+*.DS_Store
 
 # Compiled Object files
 *.slo

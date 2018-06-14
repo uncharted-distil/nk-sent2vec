@@ -4,8 +4,8 @@ A python wrapper for embedding text documents using sent2vec, which draws on Fas
 To embed a list of strings `documents`, use:
 
 ```
-from doc_emb import embed_docs
-embedded_docs = embed_docs(documents)
+from nk_sent2vec import embed_sentences
+embedded_docs = embed_sentences(documents)
 ```
 
 ## Testing
