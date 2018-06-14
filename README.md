@@ -9,4 +9,4 @@ embedded_docs = embed_sentences(documents)
 ```
 
 ## Testing
-Tests can be run using `nosetests`
+Tests can be run using `nosetests -s`
