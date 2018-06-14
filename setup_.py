@@ -21,7 +21,6 @@ class DevelopSent2Vec(develop):
 
     def run(self):
         develop.do_egg_install(self)
-        os.system("pip install -r requirements.txt")
         os.system("cd nk_sent2vec/sent2vec && make")
         os.system("cd nk_sent2vec/sent2vec/src && python setup.py build_ext && pip install . ")
         install.run(self)
