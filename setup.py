@@ -3,7 +3,7 @@ import os
 from setuptools import setup
 from setuptools.command.develop import develop
 from setuptools.command.install import install
-import distutils.command.develop as orig_develop
+
 import distutils.command.install as orig_install
 
 S2V_INSTALL_PATH = '/app/epfml_sent2vec'
@@ -30,7 +30,7 @@ class DevelopSent2Vec(develop):
         os.system("cd {0} && make".format(S2V_INSTALL_PATH))
         os.system("cd {0}/src && python3 setup.py build_ext && pip3 install . ".format(S2V_INSTALL_PATH))
 
-        orig_develop.develop.run(self)
+        orig_install.install.run(self)
 
 
 setup(
