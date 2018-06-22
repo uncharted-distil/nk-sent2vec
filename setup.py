@@ -17,7 +17,7 @@ class InstallSent2Vec(install):
         os.system("pip3 install -r requirements.txt")
         os.system("git clone https://github.com/epfml/sent2vec.git {0}".format(S2V_INSTALL_PATH))
         os.system("cd {0} && make".format(S2V_INSTALL_PATH))
-        os.system("cd {0}/src && python3 setup.py build_ext && pip3 install . ".format(S2V_INSTALL_PATH))
+        os.system("cd {0}/src && python setup.py install --single-version-externally-managed && pip3 install . ".format(S2V_INSTALL_PATH))
 
         install.run(self)
 
@@ -30,7 +30,7 @@ class DevelopSent2Vec(develop):
         os.system("pip3 install -r requirements.txt")
         os.system("git clone https://github.com/epfml/sent2vec.git {0}".format(S2V_INSTALL_PATH))
         os.system("cd {0} && make".format(S2V_INSTALL_PATH))
-        os.system("cd {0}/src && python3 setup.py build_ext && pip3 install . ".format(S2V_INSTALL_PATH))
+        os.system("cd {0}/src && python setup.py install --single-version-externally-managed && pip3 install . ".format(S2V_INSTALL_PATH))
 
         install.run(self)
 
