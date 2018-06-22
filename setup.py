@@ -7,24 +7,24 @@ from setuptools.command.install import install
 S2V_INSTALL_PATH = '/app/epfml_sent2vec'
 
 
-class InstallSent2Vec(install):
+class run(install):
     ''' Build sent2vec FastText binary, then pip install sent2vec. '''
 
     def do_egg_install(self):
         os.system("git clone https://github.com/epfml/sent2vec.git {0}".format(S2V_INSTALL_PATH))
         os.system("cd {0} && make".format(S2V_INSTALL_PATH))
         os.system("cd {0}/src && python3 setup.py build_ext && pip3 install . ".format(S2V_INSTALL_PATH))
-        install.do_egg_install(self)
+        install.run(self)
 
 
 class DevelopSent2Vec(develop):
     ''' Clone epfml's sent2vec repo, build sent2vec FastText binary, and pip install sent2vec. '''
 
-    def do_egg_install(self):
+    def run(self):
         os.system("git clone https://github.com/epfml/sent2vec.git {0}".format(S2V_INSTALL_PATH))
         os.system("cd {0} && make".format(S2V_INSTALL_PATH))
         os.system("cd {0}/src && python3 setup.py build_ext && pip3 install . ".format(S2V_INSTALL_PATH))
-        install.do_egg_install(self)  # instead of develop.run(self)
+        install.run(self)  # instead of develop.run(self)
 
 
 setup(
