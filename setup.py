@@ -11,7 +11,7 @@ class InstallSent2Vec(install):
     def run(self):
         os.system("git clone https://github.com/epfml/sent2vec.git")
         os.system("cd sent2vec && make")
-        os.system("cd sent2vec/src && python setup.py build_ext && pip install . ")
+        os.system("cd sent2vec/src && python3 setup.py build_ext && pip3 install . ")
         install.run(self)
 
 
@@ -21,7 +21,7 @@ class DevelopSent2Vec(develop):
     def run(self):
         os.system("git clone https://github.com/epfml/sent2vec.git")
         os.system("cd sent2vec && make")
-        os.system("cd sent2vec/src && python setup.py build_ext && pip install . ")
+        os.system("cd sent2vec/src && python3 setup.py build_ext && pip3 install . ")
         install.run(self)
 
 
