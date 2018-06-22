@@ -5,23 +5,23 @@ from setuptools.command.develop import develop
 from setuptools.command.install import install
 
 
-class InstallSent2Vec(install):
+class PostDevelopCommand(develop):
     ''' Build sent2vec FastText binary, then pip install sent2vec. '''
 
     def run(self):
         os.system("git clone https://github.com/epfml/sent2vec.git")
         os.system("cd sent2vec && make")
-        os.system("cd sent2vec/src && python3 setup.py build_ext && pip3 install . ")
+        os.system("cd sent2vec/src && python3 setup.py build_ext --old_and_unmanageable && pip3 install . ")
         install.run(self)
 
 
-class DevelopSent2Vec(develop):
+class PostInstallCommand(install):
     ''' Build sent2vec FastText binary, then pip install sent2vec. '''
 
     def run(self):
         os.system("git clone https://github.com/epfml/sent2vec.git")
         os.system("cd sent2vec && make")
-        os.system("cd sent2vec/src && python3 setup.py build_ext && pip3 install . ")
+        os.system("cd sent2vec/src && python3 setup.py build_ext --old_and_unmanageable && pip3 install . ")
         install.run(self)
 
 
