@@ -18,7 +18,7 @@ class InstallSent2Vec(install):
         os.system("cd {0} && make".format(S2V_INSTALL_PATH))
         os.system("cd {0}/src && python3 setup.py build_ext && pip3 install . ".format(S2V_INSTALL_PATH))
 
-        orig_install.install.run(self)
+        install.run(self)
 
 
 class DevelopSent2Vec(develop):
@@ -30,7 +30,7 @@ class DevelopSent2Vec(develop):
         os.system("cd {0} && make".format(S2V_INSTALL_PATH))
         os.system("cd {0}/src && python3 setup.py build_ext && pip3 install . ".format(S2V_INSTALL_PATH))
 
-        orig_install.install.run(self)
+        install.run(self)
 
 
 setup(
