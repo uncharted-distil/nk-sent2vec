@@ -13,7 +13,7 @@ class InstallSent2Vec(install):
     def run(self):
         os.system("git clone https://github.com/epfml/sent2vec.git {0}".format(S2V_INSTALL_PATH))
         os.system("cd {0} && make".format(S2V_INSTALL_PATH))
-        os.system("cd {0}/src && python3 setup.py build_ext --old_and_unmanageable && pip3 install . ".format(S2V_INSTALL_PATH))
+        os.system("cd {0}/src && python3 setup.py install --old_and_unmanageable".format(S2V_INSTALL_PATH))
         install.run(self)
 
 
@@ -23,7 +23,7 @@ class DevelopSent2Vec(develop):
     def run(self):
         os.system("git clone https://github.com/epfml/sent2vec.git {0}".format(S2V_INSTALL_PATH))
         os.system("cd {0} && make".format(S2V_INSTALL_PATH))
-        os.system("cd {0}/src && python3 setup.py build_ext --old_and_unmanageable && pip3 install . ".format(S2V_INSTALL_PATH))
+        os.system("cd {0}/src && python3 setup.py install --old_and_unmanageable".format(S2V_INSTALL_PATH))
         install.run(self)  # instead of develop.run(self)
 
 
