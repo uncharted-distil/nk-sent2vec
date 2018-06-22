@@ -10,17 +10,15 @@ class InstallSent2Vec(install):
 
     def run(self):
         # os.system("pip install -r requirements.txt")
-        install.do_egg_install(self)
         os.system("cd nk_sent2vec/sent2vec && make")
         os.system("cd nk_sent2vec/sent2vec/src && python setup.py build_ext && pip install . ")
-        # install.run(self)
+        install.run(self)
 
 
 class DevelopSent2Vec(develop):
     ''' Build sent2vec FastText binary, then pip install sent2vec. '''
 
     def run(self):
-        develop.do_egg_install(self)
         os.system("cd nk_sent2vec/sent2vec && make")
         os.system("cd nk_sent2vec/sent2vec/src && python setup.py build_ext && pip install . ")
         install.run(self)
