@@ -11,7 +11,7 @@ def get_model_path():
 
 MODEL_PATH = os.getenv('MODEL_PATH', get_model_path())
 
-# pretrained models:
+# TODO add switch / env var for different pretrained models:
 # sent2vec_wiki_unigrams 5GB (600dim, trained on english wikipedia)
 # sent2vec_wiki_bigrams 16GB (700dim, trained on english wikipedia)
 # sent2vec_twitter_unigrams 13GB (700dim, trained on english tweets)
