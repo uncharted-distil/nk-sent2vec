@@ -9,7 +9,7 @@ class InstallSent2Vec(install):
     ''' Build sent2vec FastText binary, then pip install sent2vec. '''
 
     def run(self):
-        # os.system("pip install -r requirements.txt")
+        os.system("git clone https://github.com/epfml/sent2vec.git")
         os.system("cd nk_sent2vec/sent2vec && make")
         os.system("cd nk_sent2vec/sent2vec/src && python setup.py build_ext && pip install . ")
         install.run(self)
@@ -19,6 +19,7 @@ class DevelopSent2Vec(develop):
     ''' Build sent2vec FastText binary, then pip install sent2vec. '''
 
     def run(self):
+        os.system("git clone https://github.com/epfml/sent2vec.git")
         os.system("cd nk_sent2vec/sent2vec && make")
         os.system("cd nk_sent2vec/sent2vec/src && python setup.py build_ext && pip install . ")
         install.run(self)
