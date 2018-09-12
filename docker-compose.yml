@@ -6,7 +6,9 @@ networks:
 services:
 
   nk_sent2vec:
-    build: .
+    build: 
+      dockerfile: dev.dockerfile
+      context: .
     command: nosetests
     environment:
       - PORT=5000
