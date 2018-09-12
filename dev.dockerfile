@@ -26,7 +26,7 @@ RUN git clone https://github.com/epfml/sent2vec.git $HOME/sent2vec \
 
 # install nk_sent2vec
 COPY . $HOME/
-RUN python setup.py install 
+RUN python setup-dev.py install 
 
 # check that it runs by triggering tests
-CMD nosetests
+CMD ["pytest", "--color=yes", "-s", "nk_sent2vec/tests.py"]

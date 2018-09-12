@@ -40,7 +40,7 @@ setup(
     install_requires=[
         'Cython>=0.28.3',
         'numpy>=1.14.1',
-        'nose>=1.3.7',
+        'pytest>=3.7.1',
     ],
     cmdclass={
         'install': InstallSent2Vec,
