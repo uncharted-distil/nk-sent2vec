@@ -1,39 +1,41 @@
 ''' wrapper functions for the sent2vec model object '''
 
+
 from typing import List
 
 import sent2vec
 
-from .config import MODEL_PATH
+# from .config import MODEL_PATH
 
-model = sent2vec.Sent2vecModel()
-model.load_model(MODEL_PATH)
+# model = sent2vec.Sent2vecModel()
+# MODEL_PATH = '/home/nk-sent2vec/models/torontobooks_unigrams.bin'
+# model.load_model(MODEL_PATH)
 
+class Sent2Vec:
+	def __init__(self, path):
+		model = sent2vec.Sent2vecModel()
+        	model.load_model(path)
+        	self.model = model
 
-def produce(sentences: List[str]):
-    return embed_sentences(sentences)
+	def produce(self, sentences: List[str]):
+    		return self.model.embed_sentences(sentences)
 
+	def embed_sentence(self, sentence: str):
+    		return self.model.embed_sentences(sentence)
 
-def embed_sentence(sentence: str):
-    return model.embed_sentences(sentence)
+	def embed_sentences(self, sentences: List[str]):
+   		 return self.model.embed_sentences(sentences)
 
+	def train_model(self, input_path, output_path):
+   		# TODO
+    		pass
 
-def embed_sentences(sentences: List[str]):
-    return model.embed_sentences(sentences)
+	def nearest_neighbors(self, query_sentence, corpus_path):
+    		# ./fasttext nnSent model.bin corpora [k]
+    		# TODO
+    		pass
 
-
-def train_model(input_path, output_path):
-    # TODO
-    pass
-
-
-def nearest_neighbors(query_sentence, corpus_path):
-    # ./fasttext nnSent model.bin corpora [k]
-    # TODO
-    pass
-
-
-def analogies(query_sentence, corpus_path):
-    # ./fasttext analogiesSent model.bin corpora [k]
-    # TODO
-    pass
+	def analogies(self, query_sentence, corpus_path):
+    		# ./fasttext analogiesSent model.bin corpora [k]
+    		# TODO
+    		pass
