@@ -21,21 +21,21 @@ class Sent2Vec:
 		return self.model.embed_sentences(sentences)
 
 	def embed_sentence(self, sentence: str):
-    	return self.model.embed_sentences(sentence)
+		return self.model.embed_sentences(sentence)
 
 	def embed_sentences(self, sentences: List[str]):
-   		return self.model.embed_sentences(sentences)
+		return self.model.embed_sentences(sentences)
 
 	def train_model(self, input_path, output_path):
-   		# TODO
-    	pass
+		# TODO
+		pass
 
 	def nearest_neighbors(self, query_sentence, corpus_path):
-    	# ./fasttext nnSent model.bin corpora [k]
-    	# TODO
-    	pass
+		# ./fasttext nnSent model.bin corpora [k]
+		# TODO
+		pass
 
 	def analogies(self, query_sentence, corpus_path):
-    	# ./fasttext analogiesSent model.bin corpora [k]
-    	# TODO
-    	pass
+		# ./fasttext analogiesSent model.bin corpora [k]
+		# TODO
+		pass
