@@ -14,11 +14,11 @@ import sent2vec
 class Sent2Vec:
 	def __init__(self, path):
 		model = sent2vec.Sent2vecModel()
-        model.load_model(path)
-        self.model = model
+		model.load_model(path)
+		self.model = model
 
 	def produce(self, sentences: List[str]):
-    	return self.model.embed_sentences(sentences)
+		return self.model.embed_sentences(sentences)
 
 	def embed_sentence(self, sentence: str):
     	return self.model.embed_sentences(sentence)
