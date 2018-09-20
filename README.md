@@ -5,7 +5,9 @@ To embed a list of strings `documents`, use:
 
 ```
 from nk_sent2vec import Sent2Vec 
+
 vectorizer = Sent2Vec(path = '/home/nk-sent2vec/models/torontobooks_unigrams.bin')
+
 print(vectorizer.embed_sentences(sentences=[documents]))
 ```
 
