@@ -1,5 +1,6 @@
 import os
-from setuptools import setup
+# from setuptools import setup
+from distutils.core import setup
 from setuptools.command.develop import develop
 from setuptools.command.install import install
 
