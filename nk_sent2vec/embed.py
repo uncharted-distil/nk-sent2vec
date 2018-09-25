@@ -1,15 +1,8 @@
 ''' wrapper functions for the sent2vec model object '''
 
-
 from typing import List
 
 import sent2vec
-
-# from .config import MODEL_PATH
-
-# model = sent2vec.Sent2vecModel()
-# MODEL_PATH = '/home/nk-sent2vec/models/torontobooks_unigrams.bin'
-# model.load_model(MODEL_PATH)
 
 class Sent2Vec:
 	def __init__(self, path):
