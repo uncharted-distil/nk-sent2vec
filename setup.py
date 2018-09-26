@@ -54,7 +54,7 @@ setup(
 '''
 setup(
     name='nk_sent2vec',
-    version='1.0.0',
+    version='1.1.0',
     description='Embeds text documents using sent2vec',
     author='New Knowledge',
     packages=['nk_sent2vec'],
