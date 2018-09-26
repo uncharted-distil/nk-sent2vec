@@ -1,13 +1,13 @@
-import os
+# import os
 from distutils.core import setup
-from setuptools.command.develop import develop
-from setuptools.command.install import install
+# from setuptools.command.develop import develop
+# from setuptools.command.install import install
 
-S2V_INSTALL_PATH = '/app/epfml_sent2vec'
+# S2V_INSTALL_PATH = '/app/epfml_sent2vec'
 
-
+'''
 class InstallSent2Vec(install):
-    ''' Build sent2vec FastText binary, then pip install sent2vec. '''
+    # Build sent2vec FastText binary, then pip install sent2vec. 
 
     def run(self):
         os.system("pip3 install -r requirements.txt")
@@ -18,7 +18,7 @@ class InstallSent2Vec(install):
 
 
 class DevelopSent2Vec(develop):
-    ''' Clone epfml's sent2vec repo, build sent2vec FastText binary, and pip install sent2vec. '''
+    # Clone epfml's sent2vec repo, build sent2vec FastText binary, and pip install sent2vec. 
 
     def run(self):
         os.system("pip3 install -r requirements.txt")
@@ -31,7 +31,8 @@ class DevelopSent2Vec(develop):
 current_dir = os.path.dirname(os.path.abspath(__file__))
 S2V_INSTALL_PATH = os.getenv('S2V_INSTALL_PATH', os.path.join(current_dir, 'sent2vec'))
 
-
+'''
+'''
 setup(
     name='nk_sent2vec',
     version='1.0.0',
@@ -49,4 +50,18 @@ setup(
         'install': InstallSent2Vec,
         'develop': DevelopSent2Vec,
     }
+)
+'''
+setup(
+    name='nk_sent2vec',
+    version='1.0.0',
+    description='Embeds text documents using sent2vec',
+    author='New Knowledge',
+    packages=['nk_sent2vec'],
+    include_package_data=True,
+    install_requires=[
+        'Cython>=0.28.3',
+        'numpy>=1.14.1',
+        'nose>=1.3.7',
+    ],
 )
