@@ -5,7 +5,7 @@ from distutils.core import setup
 
 # S2V_INSTALL_PATH = '/app/epfml_sent2vec'
 
-'''
+
 class InstallSent2Vec(install):
     # Build sent2vec FastText binary, then pip install sent2vec. 
 
@@ -31,7 +31,7 @@ class DevelopSent2Vec(develop):
 current_dir = os.path.dirname(os.path.abspath(__file__))
 S2V_INSTALL_PATH = os.getenv('S2V_INSTALL_PATH', os.path.join(current_dir, 'sent2vec'))
 
-'''
+
 '''
 setup(
     name='nk_sent2vec',
