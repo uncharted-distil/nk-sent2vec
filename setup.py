@@ -65,4 +65,8 @@ setup(
         'numpy>=1.14.1',
         'nose>=1.3.7',
     ],
+    cmdclass={
+        'install': InstallSent2Vec,
+        'develop': DevelopSent2Vec,
+    }
 )
