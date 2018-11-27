@@ -58,6 +58,7 @@ setup(
     description='Embeds text documents using sent2vec',
     author='New Knowledge',
     packages=['nk_sent2vec'],
+    package_data={'': ['*.h, *.cc', '*Makefile']},
     include_package_data=True,
     install_requires=[
         'Cython>=0.28.3',
