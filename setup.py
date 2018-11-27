@@ -3,7 +3,7 @@ from distutils.core import setup
 from setuptools.command.develop import develop
 from setuptools.command.install import install
 
-# S2V_INSTALL_PATH = '/app/epfml_sent2vec'
+S2V_INSTALL_PATH = '/app/epfml_sent2vec'
 
 
 class InstallSent2Vec(install):
