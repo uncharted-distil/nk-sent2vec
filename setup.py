@@ -62,7 +62,7 @@ setup(
     include_package_data=True,
     install_requires=[
         'Cython>=0.28.3',
-        'numpy>=1.14.1',
+        'numpy>=1.14.1, <=1.15.4',
         'nose>=1.3.7',
     ],
     cmdclass={
