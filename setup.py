@@ -11,7 +11,8 @@ class InstallSent2Vec(install):
 
     def run(self):
         os.system("pip3 install -r requirements.txt")
-        os.system("git clone https://github.com/epfml/sent2vec.git@392428b294a6da9c91b6e705c14b8e2e408e34a7 {0}".format(S2V_INSTALL_PATH))
+        os.system("git clone https://github.com/epfml/sent2vec.git {0}".format(S2V_INSTALL_PATH))
+        os.system("cd {0} && git reset --hard 392428b294a6da9c91b6e705c14b8e2e408e34a7".format(S2V_INSTALL_PATH))
         os.system("cd {0} && make".format(S2V_INSTALL_PATH))
         # os.system("cd {0}/src && python3 setup.py build_ext && pip3 install . ".format(S2V_INSTALL_PATH))
         os.system("cd {0} && python3 setup.py build_ext && pip3 install . ".format(S2V_INSTALL_PATH))
@@ -23,7 +24,8 @@ class DevelopSent2Vec(develop):
 
     def run(self):
         os.system("pip3 install -r requirements.txt")
-        os.system("git clone https://github.com/epfml/sent2vec.git@392428b294a6da9c91b6e705c14b8e2e408e34a7 {0}".format(S2V_INSTALL_PATH))
+        os.system("git clone https://github.com/epfml/sent2vec.git {0}".format(S2V_INSTALL_PATH))
+        os.system("cd {0} && git reset --hard 392428b294a6da9c91b6e705c14b8e2e408e34a7".format(S2V_INSTALL_PATH))
         os.system("cd {0} && make".format(S2V_INSTALL_PATH))
         # os.system("cd {0}/src && python3 setup.py build_ext && pip3 install . ".format(S2V_INSTALL_PATH))
         os.system("cd {0} && python3 setup.py build_ext && pip3 install . ".format(S2V_INSTALL_PATH))
