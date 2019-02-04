@@ -38,7 +38,7 @@ setup(
     version='1.2.0',
     description='Embeds text documents using sent2vec',
     author='New Knowledge',
-    packages=['nk_sent2vec'],
+    packages=['d3m_sent2vec'],
     package_data={'': ['*.h, *.cc', '*Makefile']},
     include_package_data=True,
     install_requires=[
