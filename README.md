@@ -1,5 +1,5 @@
-# Document Embedding
-A python wrapper for embedding text documents using [sent2vec](https://github.com/epfml/sent2vec), which draws on FastText.
+# Sentence Embedding
+A python wrapper for embedding short texts or sentences using [sent2vec](https://github.com/epfml/sent2vec), which draws on FastText.
 
 To embed a list of strings `documents`, use:
 
