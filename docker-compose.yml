@@ -1,15 +1,20 @@
 version: '3'
 
-networks:
-  backend:
-
 services:
 
   nk_sent2vec:
     build: .
     environment:
       - MODEL_PATH=/root/models/torontobooks_unigrams.bin
-    networks:
-      - backend
     volumes:
       - ./models:/root/models
+
+  d3m_sent2vec:
+    build: 
+      dockerfile: d3m.dockerfile
+      context: .
+    environment:
+      - MODEL_PATH=/root/models/torontobooks_unigrams.bin
+    volumes:
+      - ./models:/root/models
+    
