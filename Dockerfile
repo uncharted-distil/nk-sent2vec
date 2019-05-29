@@ -1,14 +1,26 @@
-FROM registry.datadrivendiscovery.org/jpl/docker_images/complete:ubuntu-artful-python36-v2018.6.5
+FROM continuumio/miniconda3:4.5.11
 
-ENV HOME=/app
-
+ENV HOME=/root
 WORKDIR $HOME
 
-# install nk_sent2vec
-COPY . $HOME/
-# RUN python3 setup.py install 
-# RUN pip3 install .
-RUN pip3 install -e git+https://github.com/NewKnowledge/nk-sent2vec#egg=nk_sent2vec --process-dependency-links
+ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
-# check that it runs by triggering tests
-CMD nosetests
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git \
+    build-essential
+
+COPY environment.yml $HOME/
+RUN conda update -n base conda && \
+    conda env update -f $HOME/environment.yml
+
+RUN git clone https://github.com/epfml/sent2vec.git && \
+    cd sent2vec && \
+    make && \
+    python setup.py build_ext && \
+    pip install . 
+
+COPY . $HOME/
+
+RUN pip install -e .
+
+CMD ["pytest", "--color=yes", "-s", "tests"]

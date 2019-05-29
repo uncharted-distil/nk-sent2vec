@@ -1,7 +1,10 @@
+__pycache__
+tests/__pycache__
 .DS_Store
 .git
 .gitignore
 Dockerfile
+*.dockerfile
 README.md
 models
 data

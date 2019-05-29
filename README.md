@@ -4,12 +4,14 @@ A python wrapper for embedding short texts or sentences using [sent2vec](https:/
 To embed a list of strings `documents`, use:
 
 ```
-from d3m_sent2vec import Sent2Vec 
+from nk_sent2vec import Sent2Vec 
 
-vectorizer = Sent2Vec(path = '/home/torontobooks_unigrams.bin')
+vectorizer = Sent2Vec(path = '/root/models/torontobooks_unigrams.bin')
 
-print(vectorizer.embed_sentences(sentences=[documents]))
+print(vectorizer.embed_sentences(sentences=documents))
 ```
 
 ## Testing
-Tests can be run using `nosetests -s`
+Tests can be run using `pytest -s tests`
+
+Also see `makefile` for default commands

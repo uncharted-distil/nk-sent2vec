@@ -1,17 +1,22 @@
 version: '3'
 
-networks:
-  backend:
-
 services:
 
   nk_sent2vec:
-    build: .
-    command: nosetests
+    build: 
+      dockerfile: nk.dockerfile
+      context: .
     environment:
-      - PORT=5000
-      - MODEL_PATH=/app/models/torontobooks_unigrams.bin
-    networks:
-      - backend
+      - MODEL_PATH=/root/models/torontobooks_unigrams.bin
     volumes:
-      - ./models:/app/models
+      - ./models:/root/models
+
+  d3m_sent2vec:
+    build: 
+      dockerfile: d3m.dockerfile
+      context: .
+    environment:
+      - MODEL_PATH=/root/models/torontobooks_unigrams.bin
+    volumes:
+      - ./models:/root/models
+    
