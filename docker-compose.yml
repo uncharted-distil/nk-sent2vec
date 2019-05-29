@@ -3,7 +3,9 @@ version: '3'
 services:
 
   nk_sent2vec:
-    build: .
+    build: 
+      dockerfile: nk.dockerfile
+      context: .
     environment:
       - MODEL_PATH=/root/models/torontobooks_unigrams.bin
     volumes:

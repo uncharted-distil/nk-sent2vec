@@ -8,6 +8,8 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 S2V_INSTALL_PATH = os.getenv("S2V_INSTALL_PATH", os.path.join(current_dir, "sent2vec"))
 # S2V_INSTALL_PATH = "/root/epfml_sent2vec"
 
+# NOTE: python3 and pip3 here might not work for non-d3m images
+
 
 def install_sent2vec():
     # Clone epfml's sent2vec repo, build sent2vec FastText binary, and pip install sent2vec.
@@ -37,7 +39,7 @@ class DevelopSent2Vec(develop):
 
 setup(
     name="nk_sent2vec",
-    version="1.2.1",
+    version="1.3.0",
     description="Embeds text documents using sent2vec",
     author="New Knowledge",
     packages=["nk_sent2vec"],
