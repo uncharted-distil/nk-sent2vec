@@ -45,6 +45,6 @@ setup(
     packages=["nk_sent2vec"],
     package_data={"": ["*.h, *.cc", "*Makefile"]},
     include_package_data=True,
-    install_requires=["Cython", "numpy", "pytest"],
+    install_requires=["Cython==0.29.16", "numpy>=1.15.4,<=1.18.2", "pytest"],
     cmdclass={"install": InstallSent2Vec, "develop": DevelopSent2Vec},
 )
