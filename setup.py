@@ -43,8 +43,13 @@ setup(
     description="Embeds text documents using sent2vec",
     author="New Knowledge",
     packages=["nk_sent2vec"],
-    package_data={"": ["*.h, *.cc", "*Makefile"]},
-    include_package_data=True,
-    install_requires=["Cython==0.29.16", "numpy>=1.15.4,<=1.18.2", "pytest"],
-    cmdclass={"install": InstallSent2Vec, "develop": DevelopSent2Vec},
+    #package_data={"": ["*.h, *.cc", "*Makefile"]},
+    #include_package_data=True,
+    install_requires=[
+        "Cython==0.29.16", 
+        "numpy>=1.15.4,<=1.18.2", 
+        "pytest",
+        "sent2vec @ git+https://github.com/epfml/sent2vec#egg=sent2vec"
+    ],
+    #cmdclass={"install": InstallSent2Vec, "develop": DevelopSent2Vec},
 )
