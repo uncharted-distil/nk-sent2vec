@@ -39,7 +39,7 @@ class DevelopSent2Vec(develop):
 
 setup(
     name="nk_sent2vec",
-    version="1.3.0",
+    version="1.4.0",
     description="Embeds text documents using sent2vec",
     author="New Knowledge",
     packages=["nk_sent2vec"],
